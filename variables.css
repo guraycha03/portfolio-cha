@@ -8,7 +8,7 @@
 
 :root {
   /* Base Colors */
-  --color-bg: #fffef7;         
+  --color-bg: #fffdf8;         
   --color-text: #333333;      
   --color-text-light: #666666;  
 
@@ -73,8 +73,6 @@
 }
 
 
-
-
 /* =========================================
    DARK MODE STYLES
 ========================================= */
@@ -119,8 +117,6 @@ body.dark-mode .burger span {
   background: #f5f5f5;
 }
 
-
-
 /* Mobile Nav in Dark Mode */
 body.dark-mode .mobile-nav {
   background: var(--color-card-bg);
@@ -141,12 +137,18 @@ body.dark-mode .mobile-nav ul li a::after {
 }
 
 
+
+.dark-mode .theme-toggle {
+  background: #595e66; 
+  box-shadow: 
+    4px 4px 8px rgba(0,0,0,0.5),
+    -4px -4px 8px rgba(255,255,255,0.05);
+}
+
+:root.dark-mode {
+  --image-bg: #a8b8c9;
+}
+
 /* =========================================
    END OF DARK MODE STYLES
 ========================================= */
-
-
-/* Dark mode: add background */
-:root.dark-mode {
-  --image-bg: #75808b; /* subtle circle bg for dark mode */
-}

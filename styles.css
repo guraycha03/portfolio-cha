@@ -38,64 +38,47 @@ body, header, nav, .mobile-nav {
 /* =========================
    THEME TOGGLE BUTTON
 ========================= */
-
 /* =========================
-   THEME TOGGLE BUTTON - Minimalist Neumorphic Droplet
+   THEME TOGGLE - Minimalist Neumorphism
 ========================= */
 .theme-toggle {
-  margin-left: 10px;
-  cursor: pointer;
   width: 45px;
   height: 45px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-
-  /* Soft subtle gradient */
-  background: linear-gradient(145deg, #e6e9ef, #cfd4dd);
-
-  /* Neumorphic shadows (soft embossed droplet) */
+  cursor: pointer;
+  background: #e0e0e0; /* light mode background */
   box-shadow: 
-    6px 6px 12px rgba(0, 0, 0, 0.12),
-    -6px -6px 12px rgba(255, 255, 255, 0.7),
-    inset -2px -2px 4px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 4px rgba(0, 0, 0, 0.08);
-
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  order: 1;
+    6px 6px 12px rgba(0, 0, 0, 0.1),
+    -6px -6px 12px rgba(255, 255, 255, 0.7); 
+  transition: all 0.3s ease;
   position: relative;
 }
 
-/* Subtle light reflection for droplet feel */
-.theme-toggle::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  width: 50%;
-  height: 25%;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Hover effect – cleaner glow (no movement) */
+/* Hover effect */
 .theme-toggle:hover {
-  background: linear-gradient(145deg, #f0f3f8, #d4d9e0);
   box-shadow: 
-    8px 8px 16px rgba(0, 0, 0, 0.15),
-    -8px -8px 16px rgba(255, 255, 255, 0.8),
-    inset -3px -3px 5px rgba(255, 255, 255, 0.6),
-    inset 3px 3px 6px rgba(0, 0, 0, 0.08);
+    4px 4px 8px rgba(0,0,0,0.08),
+    -4px -4px 8px rgba(255,255,255,0.6);
 }
 
-/* Active – pressed droplet effect */
-.theme-toggle:active {
-  background: linear-gradient(145deg, #cfd4dd, #e6e9ef);
+.dark-mode .theme-toggle:hover {
   box-shadow: 
-    inset 6px 6px 12px rgba(0, 0, 0, 0.15),
-    inset -6px -6px 12px rgba(255, 255, 255, 0.6);
+    3px 3px 6px rgba(0,0,0,0.5),
+    -3px -3px 6px rgba(255,255,255,0.05);
+}
+
+/* Pressed effect */
+.theme-toggle:active {
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.1),
+              inset -4px -4px 8px rgba(255,255,255,0.6);
+}
+
+.dark-mode .theme-toggle:active {
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5),
+              inset -3px -3px 6px rgba(255,255,255,0.05);
 }
 
 /* Icon inside */
@@ -103,7 +86,15 @@ body, header, nav, .mobile-nav {
   width: 50%;
   height: 50%;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.theme-toggle:hover img {
+  transform: scale(1.1);
+}
+
+.dark-mode .theme-toggle img {
+  filter: brightness(0.9); 
 }
 
 
@@ -129,8 +120,25 @@ header {
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
   order: 2;
 }
+
+
+/* Heart popup */
+.logo-heart {
+  position: absolute;
+  top: -10px; 
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 
 nav {
   display: none;
@@ -340,19 +348,6 @@ nav ul li a:hover::after,
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ======================================================
    HERO SECTION
    Layout, Typography, and Styling for Hero Section
@@ -361,25 +356,30 @@ nav ul li a:hover::after,
 /* Hero container */
 .hero-section {
   display: flex;
+  flex-wrap: nowrap;   
   align-items: center;
-  justify-content: center;  /* centers hero content horizontally */
-  min-height: 100vh;
-  padding: 0 60px;          /* breathing room on left/right */
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 60px 40px;
   background-color: var(--color-bg);
   color: var(--color-text);
+  overflow: hidden;
 }
 
 /* Make content + image share space */
 .hero-section > * {
-  flex: 1;
+  flex: 1 1 50%;     
+  max-width: 600px;   
+  min-width: 0;        
 }
+
 
 /* Left content area */
 .hero-content {
-  flex: 1 1 50%;          /* take up half space */
-  max-width: 600px;       /* prevent stretching too wide */
+  flex: 1 1 50%;         
+  max-width: 600px;     
   text-align: left;
-  padding-right: 40px;    /* spacing from image */
+  padding-right: 40px;   
 }
 
 .hero-section h1 {
@@ -459,18 +459,22 @@ nav ul li a:hover::after,
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 40px; 
 }
 
 /* Wrapper always matches image size */
 .hero-image .image-wrapper {
   position: relative;
+  border-radius: 50%;
+  background: var(--image-bg, transparent);
+  padding: 15px;
+  box-shadow: var(--shadow-soft);
+
+  /* Make wrapper auto-size with image */
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  background: var(--image-bg, transparent);
-  padding: 15px; /* spacing around image */
-  box-shadow: var(--shadow-soft);
+  max-width: 100%;
 }
 
 /* The actual image */
@@ -480,6 +484,7 @@ nav ul li a:hover::after,
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  object-fit: contain;
 }
 
 /* Tablet */
@@ -573,23 +578,25 @@ nav ul li a:hover::after,
 /* Small screens / phones */
 @media (max-width: 767px) {
   .hero-section {
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
     padding: 40px 24px;
   }
 
-  .hero-buttons {
-    justify-content: center;  
+    .hero-section > * {
+    min-width: 0; 
+    max-width: 100%; 
+  }
+
+  .hero-image .image-wrapper {
+    margin: 0 auto; 
   }
 
   .hero-image {
-    order: -1; 
+    order: -1;  
+    padding-left: 0; 
     justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .hero-image img {
-    max-width: 220px;
+    margin-bottom: 2rem;  
   }
 
   .hero-content {
@@ -604,20 +611,65 @@ nav ul li a:hover::after,
   .hero-section p {
     font-size: 1rem;
   }
-}
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-image img {
-    width: 280px;
-    height: 280px;
+  .hero-buttons {
+    justify-content: center;
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .hero-image img {
-    width: 380px;
-    height: 380px;
+/* Tablet & up (>=768px) */
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;  
+    text-align: left;
+    padding: 60px 40px;
   }
+
+  .hero-content {
+    order: 1;   
+    text-align: left;
+    padding-right: 40px;
+  }
+
+  .hero-image {
+    order: 2;   
+    margin-bottom: 0;
+  }
+}
+
+.hero-section > * {
+  flex: 1 1 0;        
+  min-width: 360px;   
+  max-width: 600px; 
+}
+
+
+/* ======================================================
+   FLOATING FLOWERS EFFECT
+   Animates flowers in random directions and fades them out
+====================================================== */
+.flower-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.flower {
+  will-change: transform, opacity;
+}
+
+/* Show hand cursor when hovering the clickable profile image */
+.hero-image .image-wrapper,
+#profile-img {
+  cursor: pointer;
+}
+
+@keyframes floatFlower {
+  0%   { opacity: 1; transform: translate(0,0) rotate(0deg) scale(0.6); }
+  25%  { transform: translate(var(--dx1), var(--dy1)) rotate(var(--r1)) scale(0.8); }
+  50%  { transform: translate(var(--dx2), var(--dy2)) rotate(var(--r2)) scale(1); }
+  75%  { transform: translate(var(--dx3), var(--dy3)) rotate(var(--r3)) scale(0.9); }
+  100% { opacity: 0; transform: translate(var(--dx4), var(--dy4)) rotate(var(--r4)) scale(0.5); }
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cha | Portfolio</title>
+  
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="variables.css">  <!-- must come first -->
+  <link rel="stylesheet" href="styles.css">      <!-- your main CSS -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  
+  <header>
+    <!-- Left group for mobile: logo only -->
+    <div class="left-group">
+      <div class="logo">Cha</div>
+    </div>
+
+    <!-- Navigation (desktop only) -->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Theme toggle (separate, always outside left-group) -->
+    <div class="theme-toggle" id="themeToggle">
+      <img src="assets/icons/moon.svg" alt="Toggle Theme" id="themeIcon">
+    </div>
+
+    <!-- Burger menu (mobile only) -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+    <!-- Mobile Menu (moved OUTSIDE header) -->
+    <div class="mobile-nav" id="mobile-nav">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </div>
+
+
+
+
+
+ <main id="home" class="hero-section">
+  <div class="hero-content">
+    <h1 class="wave-text">
+      <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>,</span>
+      <span>&nbsp;</span><span>I</span><span>'</span><span>m</span><span>&nbsp;</span>
+      <span class="highlight">C</span><span class="highlight">h</span><span class="highlight">a</span><span class="highlight">r</span><span class="highlight">i</span><span class="highlight">s</span><span class="highlight">s</span><span class="highlight">e</span>
+    </h1>
+    <p>I’m a web developer passionate about building clean, modern, and user-friendly interfaces.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">Learn More</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+
+  </div>
+
+  
+  <div class="hero-image">
+    <div class="image-wrapper">
+      <img src="assets/images/chaaa.png" alt="Cha Profile Picture">
+    </div>
+  </div>
+</main>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

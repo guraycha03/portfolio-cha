@@ -1,0 +1,125 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+  padding: 120px 20px; /* top & bottom: 120px, left & right: 20px */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  position: relative;
+  z-index: 2;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Optional: reduce padding on small screens */
+@media (max-width: 767px) {
+  .about-section {
+    padding: 80px 20px; /* smaller vertical padding for mobile */
+  }
+}
+
+/* Swap image and text on desktop */
+.about-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row; /* default: image left, text right */
+}
+
+.about-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-text h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+/* =========================
+   POLAROID IMAGE
+========================= */
+.about-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   POLAROID IMAGE - CONSISTENT SIZE
+========================= */
+/* =========================
+   POLAROID IMAGE - FULL IMAGE, RESPONSIVE
+========================= */
+.polaroid {
+  background: #fff; 
+  padding: 15px 15px 35px 15px; /* extra bottom for polaroid look */
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 280px;   /* keeps desktop size */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto; /* center it */
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;       /* maintain aspect ratio */
+  display: block;
+  border-radius: 3px;
+  object-fit: contain; /* ensures full image is visible, not cropped */
+}
+
+/* Mobile: stack vertically with image on top */
+/* Mobile: stack vertically with image on top */
+@media (max-width: 767px) {
+  .about-section .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    order: 2;
+  }
+
+  .about-image {
+    order: 1;
+  }
+
+  .polaroid {
+    max-width: 220px;      /* smaller size for mobile */
+    padding: 12px 12px 18px 12px; /* reduced bottom padding */
+  }
+
+  .polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+    object-fit: contain;
+  }
+}

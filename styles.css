@@ -356,15 +356,17 @@ nav ul li a:hover::after,
 /* Hero container */
 .hero-section {
   display: flex;
-  flex-wrap: nowrap;   
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 70px);
   padding: 60px 40px;
   background-color: var(--color-bg);
   color: var(--color-text);
-  overflow: hidden;
+  position: relative; /* needed for floating flowers */
+  z-index: 1;         /* make sure it's behind future sections */
 }
+
 
 /* Make content + image share space */
 .hero-section > * {
@@ -673,3 +675,11 @@ nav ul li a:hover::after,
   75%  { transform: translate(var(--dx3), var(--dy3)) rotate(var(--r3)) scale(0.9); }
   100% { opacity: 0; transform: translate(var(--dx4), var(--dy4)) rotate(var(--r4)) scale(0.5); }
 }
+
+
+
+
+
+
+
+

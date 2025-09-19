@@ -90,55 +90,74 @@ themeToggle.addEventListener("click", () => {
 /* ======================================================
    FLOATING FLOWERS EFFECT
 ====================================================== */
+
+
+
 const profileImg = document.getElementById("profile-img");
 const flowerContainer = document.getElementById("flower-confetti-container");
 
-// Trigger flower burst on profile image click
+const MAX_FLOWERS = 15;
+let currentFlowers = 0;
+
 profileImg.addEventListener("click", () => {
-  const wrapper = profileImg.parentElement; 
-  const rect = wrapper.getBoundingClientRect();
+  if (currentFlowers >= MAX_FLOWERS) return;
 
-  const startX = rect.width / 2;
-  const startY = rect.height / 2 - 75; 
+  const rect = profileImg.getBoundingClientRect();
 
-  for (let i = 0; i < 20; i++) {
+  // Start at center of image
+  const startX = rect.left + rect.width / 2;
+  const startY = rect.top + rect.height / 2 - rect.height * 0.2; 
+  // offset a bit higher (-20% height) so flowers burst from upper half
+
+  const flowersToSpawn = Math.min(MAX_FLOWERS - currentFlowers, 5);
+
+  for (let i = 0; i < flowersToSpawn; i++) {
     spawnFloatingFlower(startX, startY);
+    currentFlowers++;
   }
 });
 
-// Function to spawn a single floating flower
 function spawnFloatingFlower(x, y) {
   const flower = document.createElement("img");
   flower.src = "assets/images/flower.png";
   flower.classList.add("flower");
-  flower.style.width = `${20 + Math.random() * 20}px`;
-  flower.style.position = "absolute";
+
+  const size = 20 + Math.random() * 20;
+  flower.style.width = size + "px";
+
   flower.style.left = `${x}px`;
   flower.style.top = `${y}px`;
-  flower.style.opacity = 1;
 
   flowerContainer.appendChild(flower);
 
-  // Random velocity and rotation
-  let vx = (Math.random() - 0.5) * 4; 
-  let vy = (Math.random() - 0.5) * 4;
-  let vr = (Math.random() - 0.5) * 4; 
+  // Random velocity for more natural float
+  let vx = (Math.random() - 0.5) * 3;
+  let vy = (Math.random() - 0.7) * 3; // more upward tendency
+  let vr = (Math.random() - 0.5) * 4;
   let rotation = 0;
+  let opacity = 1;
 
-  // Animate the flower
   function animate() {
     x += vx;
     y += vy;
     rotation += vr;
 
+    // Bounce inside window edges
+    if (x <= 0 || x >= window.innerWidth - size) vx *= -1;
+    if (y <= 0 || y >= window.innerHeight - size) vy *= -1;
+
     flower.style.left = x + "px";
     flower.style.top = y + "px";
     flower.style.transform = `rotate(${rotation}deg)`;
 
-    flower.style.opacity = parseFloat(flower.style.opacity) - 0.002;
+    opacity -= 0.004;
+    flower.style.opacity = opacity;
 
-    if (flower.style.opacity > 0) requestAnimationFrame(animate);
-    else flower.remove();
+    if (opacity > 0) requestAnimationFrame(animate);
+    else {
+      flower.remove();
+      currentFlowers--;
+    }
   }
 
   requestAnimationFrame(animate);

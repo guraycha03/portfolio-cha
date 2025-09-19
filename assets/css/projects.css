@@ -130,6 +130,10 @@
 
 
 
+
+
+
+
 /* Fun Projects Section */
 .fun-projects-section {
   background-color: #fefdf9;
@@ -146,66 +150,62 @@
 }
 
 
+
+
+
+
 /* Iframe Styling */
 
-/* Wrapper to make iframe responsive */
-/* Container for the grid */
-.codepen-grid {
+.fun-projects {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+/* Grid container */
+.projects-grid {
   display: grid;
-  gap: 1.5rem; /* space between cards */
-  grid-template-columns: 1fr; /* one column by default */
-  padding: 1rem;
+  grid-template-columns: 1fr; /* mobile: 1 column */
+  gap: 2rem;
+  justify-content: center; /* centers the whole grid */
+  max-width: 1500px; /* keeps content from being too wide */
+  margin: 0 auto; /* centers grid inside the section */
 }
 
-/* Responsive columns */
-@media (min-width: 600px) {
-  .codepen-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 on tablets */
+/* On medium screens, show 2 per row */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 }
 
-@media (min-width: 900px) {
-  .codepen-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 on desktops */
-  }
-}
-
+/* On wide screens, show 3 per row */
 @media (min-width: 1200px) {
-  .codepen-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 on wide screens */
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
-/* Card style for each iframe wrapper */
-.codepen-wrapper {
-  position: relative;
-  width: 100%;
+.project-card {
+  border: 2px solid #e0dede;
   border-radius: 16px;
   overflow: hidden;
-  background: #fffdfd;
-  border: 2px solid #f3e5f5; /* soft lavender-pink border */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; 
+  max-width: 500px; /* keep them “phone sized” */
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Hover effect */
-.codepen-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Aspect ratio for iframe */
-.codepen-wrapper::before {
-  content: "";
-  display: block;
-  padding-top: 120%; /* Taller look (phone-like). Can change to 75% for landscape */
-}
-
-.codepen-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-iframe {
   width: 100%;
-  height: 100%;
+  height: 700px;
   border: none;
+}
+.project-card .card-body {
+  padding: 1rem;
 }

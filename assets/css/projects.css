@@ -1,0 +1,146 @@
+/* Projects Section */
+/* Container centering */
+.projects-section .container {
+  max-width: 1200px;    /* or whatever width suits your layout */
+  margin: 0 auto;       /* centers container horizontally */
+  padding: 0 20px;      /* optional padding */
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center; /* centers the grid items */
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--color-primary);
+  text-align: center;   /* centers the title */
+}
+
+/* Neumorphism Project Card */
+.project-card {
+  background: rgba(255, 255, 255, 0.15);       /* semi-transparent */
+  border: 2px solid rgba(255, 255, 255, 0.25); /* soft border for depth */
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);     /* soft shadow */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Image container with fixed height */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Card body flex to align button consistently */
+.project-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.project-card .btn.primary {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  align-self: center;
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);  /* slightly stronger shadow on hover */
+  background: rgba(255, 255, 255, 0.2);       /* slightly more opaque on hover */
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .projects-section {
+    padding: 80px 15px;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 767px) {
+  .projects-section {
+    padding: 80px 15px;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .project-card img {
+    height: 150px; 
+  }
+}
+
+
+
+
+/* Fun Projects Section */
+.fun-projects-section {
+  background-color: #fefdf9;
+  
+}
+
+.fun-projects-section .projects-title {
+  color: var(--color-primary-light);
+}
+
+.fun-projects-section .btn.secondary {
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}

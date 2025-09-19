@@ -6,9 +6,11 @@
   <title>Cha | Portfolio</title>
   
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="stylesheet" href="variables.css">  <!-- must come first -->
-  <link rel="stylesheet" href="styles.css">      <!-- your main CSS -->
-  <link rel="stylesheet" href="assets/css/about.css"> <!-- about section CSS -->
+  <link rel="stylesheet" href="variables.css"> 
+  <link rel="stylesheet" href="styles.css">    
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+ 
 
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -124,11 +126,164 @@
 
   <div class="glow-hr"></div>
 
-  
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="projects-title">Projects</h2>
+
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <img src="assets/images/projects/note-app.PNG" alt="Note App Screenshot">
+        <h3>Note App</h3>
+        <p>A minimalist note-taking app with a soothing UI. Features include checklists, star ratings, and multiple themes to personalize your experience.</p>
+        <a href="https://note-app-one-pearl.vercel.app/" target="_blank"  rel="noopener noreferrer" class="btn primary">View Project</a>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <img src="assets/images/projects/chascent.PNG" alt="Chascent Studio Website Screenshot">
+        <h3>Chascent Studio</h3>
+        <p>A sleek product showcase website highlighting sustainable, handmade essentials. Features a minimalist design, smooth animations, and an intuitive layout to present products beautifully.</p>
+        <a href="https://guraycha03.github.io/chascent-studio/" target="_blank"  rel="noopener noreferrer" class="btn primary">View Project</a>
+      </div>
 
 
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <img src="assets/images/projects/chascent.PNG" alt="Whimsy Pastry Website Screenshot">
+        <h3>Whimsy Pastry</h3>
+        <p>An interactive pastry website with full e-commerce functionality. Users can browse products, add items to the cart, and place orders. Features a whimsical, pastel-themed design with smooth animations and responsive UI.</p>
+        <a href="https://whimsy-pastry.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn primary">View Project</a>
+      </div>
+
+  </div>
+</section>
+
+<div class="glow-hr"></div>
+
+<section id="fun-projects" class="projects-section fun-projects-section">
+  <div class="container">
+    <h2 class="projects-title">Fun & Simple Projects</h2>
+
+    <div class="projects-grid">
+      <!-- Fun Project 1 -->
+      <div class="project-card">
+        <h3>Mini Calculator</h3>
+        <p>A lightweight calculator built with HTML, CSS, and JS.</p>
+
+        <iframe 
+          src="https://www.sololearn.com/en/compiler-playground/WVRd14x7z55E/" 
+          frameborder="0" 
+          width="100%" 
+          height="300px" 
+          style="border-radius: 16px; overflow:hidden;">
+        </iframe>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini Calculator</h3>
+        <p>A lightweight calculator built with HTML, CSS, and JS.</p>
+
+        <iframe 
+          src="https://www.sololearn.com/play/123457/" 
+          frameborder="0" 
+          width="100%" 
+          height="300px" 
+          style="border-radius: 16px; overflow:hidden;">
+        </iframe>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini Calculator</h3>
+        <p>A lightweight calculator built with HTML, CSS, and JS.</p>
+
+        <iframe 
+          src="https://www.sololearn.com/play/123457/" 
+          frameborder="0" 
+          width="100%" 
+          height="300px" 
+          style="border-radius: 16px; overflow:hidden;">
+        </iframe>
+      </div>
 
 
+ 
+    </div>
+  </div>
+</section>
+
+
+<div class="glow-hr"></div>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="contact-title">Let's Connect!</h2>
+    <p class="contact-subtitle">Have a project idea, question, or just want to say hi? I'd love to hear from you!</p>
+
+    <div class="contact-content">
+      <!-- Contact Form -->
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+      <!-- Fun Contact Options -->
+      <div class="contact-info">
+        <h3>Other Ways to Connect</h3>
+        <ul>
+          <li><a href="mailto:cha@example.com" class="contact-link">📧 Email Me</a></li>
+          <li><a href="https://github.com/yourusername" target="_blank" class="contact-link">🐱 GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank" class="contact-link">💼 LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <!-- Logo / Branding -->
+    <div class="footer-brand">
+      <div class="logo">Cha</div>
+      <p>Crafting engaging web experiences, one project at a time.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#fun-projects">Fun Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Connect With Me</h4>
+      <ul>
+        <li><a href="mailto:cha@example.com" target="_blank">📧 Email</a></li>
+        <li><a href="https://github.com/yourusername" target="_blank">🐱 GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank">💼 LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Cha | All rights reserved.</p>
+  </div>
+</footer>
 
 
 
@@ -137,3 +292,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+  

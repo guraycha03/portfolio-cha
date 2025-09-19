@@ -28,7 +28,7 @@ body, header, nav, .mobile-nav {
 
 /* Main content styling */
 .main-content {
-  padding: 100px 20px;
+  padding: 0px 20px;
 }
 
 .spacer {
@@ -345,6 +345,28 @@ nav ul li a:hover::after,
 }
 
 
+/* =========================
+   Horizontal Line
+========================= */
+.glow-hr {
+  height: 2px;
+  background-color: var(--color-primary-light);
+  border-radius: 3px;
+  margin: 3rem 0;
+  transition: all 0.3s ease;
+  box-shadow: none; /* reset for light mode */
+}
+
+.dark-mode .glow-hr {
+  background-color: #c2dbee;
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+section {
+  padding: 80px 20px; /* same top and bottom for all sections */
+}
+
+
 /* ======================================================
    HERO SECTION
    Layout, Typography, and Styling for Hero Section
@@ -358,7 +380,7 @@ nav ul li a:hover::after,
   justify-content: center;
   min-height: calc(100vh - 70px);
   padding: 60px 40px;
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
   color: var(--color-text);
   position: relative; /* needed for floating flowers */
   z-index: 1;         /* make sure it's behind future sections */

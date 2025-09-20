@@ -151,7 +151,15 @@
 }
 
 .iframe-wrapper {
-  position: relative; /* create positioning context */
+  position: relative;
+}
+
+.iframe-wrapper .view-live-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; /* ensures button stays above iframe */
 }
 
 /* Fallback for iframe */
@@ -189,23 +197,24 @@
    BUTTONS
 ========================== */
 .view-live-btn {
-  position: static; /* no overlay, sits naturally in flow */
-  margin-top: 1rem; /* space between iframe/card and button */
+  position: relative; 
+  overflow: hidden;   
+  margin-top: 1rem;
   padding: 12px 18px;
   border: none;
-  background: #fffaf8;
+  background: #fff0d3ff;
   border-radius: 12px;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: #444;
+  text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .view-live-btn.cta:before {
   content: "";
@@ -217,7 +226,7 @@
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
-  z-index: 0;
+  z-index: -1;
 }
 
 .view-live-btn.cta span {

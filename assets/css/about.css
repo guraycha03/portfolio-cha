@@ -101,3 +101,101 @@
   color: var(--color-text-light);
 }
 
+
+
+.certifications {
+  margin-top: 2rem;
+}
+
+.certifications h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.cert-item {
+  background: var(--color-bg);
+  border: 2px solid #e0e0e0ff;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-4px);
+}
+
+.cert-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+/* Modal overlay */
+
+.cert-modal {
+  display: none;  /* hidden by default */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.64); /* dark overlay */
+  align-items: center;  /* only active when display:flex is added */
+  justify-content: center;
+  padding: 120px 20px;   /* push content lower to avoid header overlap */
+  box-sizing: border-box;
+}
+
+
+/* Modal content wrapper with background */
+.cert-modal-box {
+  background: var(--color-bg, #fffdf8); /* soft background */
+  padding: 1rem;
+  border-radius: 16px;
+  max-width: 95%;
+  max-height: 85vh;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+/* Certificate image inside the box */
+.cert-modal-content {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+/* Close button */
+.cert-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2100;
+}
+
+.cert-close:hover {
+  color: var(--color-primary, #7ba0bd);
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}

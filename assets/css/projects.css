@@ -39,36 +39,59 @@
 /* ==========================
    PROJECT CARD (unified)
 ========================== */
+/* ==========================
+   MAIN PROJECT CARDS
+========================== */
 .project-card {
-  background: #fff;
-  border: 4px solid rgb(200, 209, 214)(209, 185, 185);
-  border-radius: 20px;
-  padding: 5.5rem;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  /* background: #fff; */
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
-.project-card img,
-.project-card iframe {
+.project-card img {
   width: 100%;
-  height: 180px;
-  border-radius: 16px;
+  height: 220px;          /* ✅ fixed height */
+  object-fit: cover;      /* ✅ keeps image proportion */
+  border-radius: 12px;
   margin-bottom: 1rem;
-  object-fit: cover;
-  border: none;
 }
+
+/* ==========================
+   MAIN PROJECT BUTTON
+========================== */
+.main-btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.main-btn:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.main-btn:active {
+  transform: scale(0.96);
+}
+
 
 .project-card .card-body {
   display: flex;

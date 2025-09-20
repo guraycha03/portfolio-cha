@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
@@ -20,6 +24,17 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Page transition */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 body, header, nav, .mobile-nav {

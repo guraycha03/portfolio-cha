@@ -34,7 +34,7 @@
       </ul>
     </nav>
 
-    <!-- Theme toggle (separate, always outside left-group) -->
+    <!-- Theme toggle -->
     <div class="theme-toggle" id="themeToggle">
       <img src="assets/icons/moon.svg" alt="Toggle Theme" id="themeIcon">
     </div>
@@ -132,30 +132,52 @@
     <div class="projects-grid">
       
 
-      <!-- Project Card 2 -->
-      <div class="project-card">
-        <img src="assets/images/projects/chascent.PNG" alt="Chascent Studio Website Screenshot">
-        <h3>Chascent Studio</h3>
-        <p>A sleek product showcase website highlighting sustainable, handmade essentials. Features a minimalist design, smooth animations, and an intuitive layout to present products beautifully.</p>
-        <a href="https://guraycha03.github.io/chascent-studio/" target="_blank"  rel="noopener noreferrer" class="btn primary">View Project</a>
-      </div>
+   <!-- Project Card 2 -->
+<div class="project-card">
+  <img src="assets/images/projects/chascent.PNG" alt="Chascent Studio Website Screenshot">
+  <h3>Chascent Studio</h3>
+  <p>A sleek product showcase website highlighting sustainable, handmade essentials. Features a minimalist design, smooth animations, and an intuitive layout to present products beautifully.</p>
+  
+  <!-- Updated button -->
+  <a href="https://guraycha03.github.io/chascent-studio/" target="_blank" rel="noopener noreferrer" class="view-live-btn cta">
+    <span>Explore</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </a>
+</div>
 
+<!-- Project Card 3 -->
+<div class="project-card">
+  <img src="assets/images/projects/chascent.PNG" alt="Whimsy Pastry Website Screenshot">
+  <h3>Whimsy Pastry</h3>
+  <p>A clean, minimalist blogging website focused on lifestyle, creativity, and personal insights. Features responsive design, engaging UI/UX, and smooth reading experience across devices.</p>
+  
+  <a href="https://chmera-blog.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn cta">
+    <span>Explore</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </a>
+</div>
 
-      <!-- Project Card 3 -->
-      <div class="project-card">
-        <img src="assets/images/projects/chascent.PNG" alt="Whimsy Pastry Website Screenshot">
-        <h3>Whimsy Pastry</h3>
-        <p>A  clean, minimalist blogging website called Chmera, focused on lifestyle, creativity, and personal insights. Built with modern web technologies, it features responsive design, engaging UI/UX, and a smooth reading experience across all devices.</p>
-        <a href="https://chmera-blog.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn primary">View Project</a>
-      </div>
+<!-- Project Card 1 -->
+<div class="project-card">
+  <img src="assets/images/projects/note-app.PNG" alt="Note App Screenshot">
+  <h3>Note App</h3>
+  <p>A minimalist note-taking app with a soothing UI. Features include checklists, star ratings, and multiple themes to personalize your experience.</p>
+  
+  <a href="https://note-app-one-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-live-btn cta">
+    <span>Explore</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </a>
+</div>
 
-      <!-- Project Card 1 -->
-      <div class="project-card">
-        <img src="assets/images/projects/note-app.PNG" alt="Note App Screenshot">
-        <h3>Note App</h3>
-        <p>A minimalist note-taking app with a soothing UI. Features include checklists, star ratings, and multiple themes to personalize your experience.</p>
-        <a href="https://note-app-one-pearl.vercel.app/" target="_blank"  rel="noopener noreferrer" class="btn primary">View Project</a>
-      </div>
 
   </div>
 </section>
@@ -167,62 +189,67 @@
   <h2 class="projects-title">Fun & Simple Projects</h2>
 
   <div class="projects-grid">
-    <div class="project-card">
-      <iframe 
-        src="https://mochi-lake.vercel.app/" 
-        class="project-iframe"
-        frameborder="0"
-        allowfullscreen
-        loading="lazy"
-        title="Mochi">
-      </iframe>
-      <button class="view-live-btn cta">
-  <span>View Live</span>
-  <svg width="15px" height="10px" viewBox="0 0 13 10">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-  </svg>
-</button>
+  <div class="project-card">
+  <div class="iframe-wrapper">
+    <iframe 
+      src="https://mochi-lake.vercel.app/" 
+      class="project-iframe"
+      frameborder="0"
+      allowfullscreen
+      loading="lazy"
+      title="Mochi">
+    </iframe>
 
+    <!-- Fallback content -->
+    <div class="iframe-fallback">
+      <img src="assets/images/cute-shark.gif" alt="Offline GIF" />
+      <p>Oops! Project failed to load. <br> Check your internet connection or try again later.</p>
     </div>
+  </div>
 
-    <div class="project-card">
-      <iframe 
-        src="https://mochi-lake.vercel.app/" 
-        class="project-iframe"
-        frameborder="0"
-        allowfullscreen
-        loading="lazy"
-        title="Mochi">
-      </iframe>
-      <button class="view-live-btn cta">
-  <span>View Live</span>
-  <svg width="15px" height="10px" viewBox="0 0 13 10">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-  </svg>
-</button>
+  <button class="view-live-btn cta">
+    <span>View Live</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </button>
+</div>
 
+
+
+
+   
+<div class="project-card">
+  <div class="iframe-wrapper">
+    <iframe 
+      src="https://mochi-mood.vercel.app/" 
+      class="project-iframe"
+      frameborder="0"
+      allowfullscreen
+      loading="lazy"
+      title="Mochi Mood">
+    </iframe>
+
+    <!-- Fallback content -->
+    <div class="iframe-fallback">
+      <img src="assets/images/offline-mochi.gif" alt="Offline GIF" />
+      <p>Oops! Project failed to load. <br> Check your internet connection or try again later.</p>
     </div>
+  </div>
 
-    <div class="project-card">
-      <iframe 
-        src="https://mochi-mood.vercel.app/" 
-        class="project-iframe"
-        frameborder="0"
-        allowfullscreen
-        loading="lazy"
-        title="Mochi Mood">
-      </iframe>
-      <button class="view-live-btn cta">
-  <span>View Live</span>
-  <svg width="15px" height="10px" viewBox="0 0 13 10">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-  </svg>
-</button>
+  <button class="view-live-btn cta">
+    <span>View Live</span>
+    <svg width="15px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </button>
+</div>
 
-    </div>
+
+
+
   </div>
 </section>
 

@@ -9,7 +9,7 @@
 :root {
   /* Base Colors */
   --color-bg: #fffdf8;         
-  --color-text: #333333;      
+  --color-text: #494848ff;      
   --color-text-light: #666666;  
 
   /* Brand / Accent */
@@ -52,7 +52,8 @@
 :root.dark-mode {
   /* Base Colors */
   --color-bg: #181a1b;        
-  --color-text: #e8e8e8;       
+  --color-text: #e8e8e8; 
+  --color-text-dark: #494848ff      
   --color-text-light: #aaaaaa; 
 
   /* Brand / Accent */

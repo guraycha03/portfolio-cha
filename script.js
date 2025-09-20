@@ -178,3 +178,10 @@ document.querySelectorAll('.view-live-btn').forEach((btn, i) => {
 });
 
 
+const wrappers = document.querySelectorAll('.iframe-wrapper');
+wrappers.forEach(wrapper => {
+  const iframe = wrapper.querySelector('iframe');
+  iframe.addEventListener('error', () => {
+    wrapper.querySelector('.iframe-fallback').style.display = 'block';
+  });
+});

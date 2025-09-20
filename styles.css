@@ -38,20 +38,38 @@ body, header, nav, .mobile-nav {
 /* =========================
    THEME TOGGLE BUTTON
 ========================= */
+/* =========================
+   THEME TOGGLE BUTTON - Uiverse Style
+========================= */
 .theme-toggle {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: #e0e0e0; 
+  background: #e0e0e0;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 
     6px 6px 12px rgba(0, 0, 0, 0.1),
-    -6px -6px 12px rgba(255, 255, 255, 0.7); 
-  transition: all 0.3s ease;
-  position: relative;
+    -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+/* Glow effect behind toggle */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.2;
 }
 
 /* Hover effect */
@@ -61,37 +79,29 @@ body, header, nav, .mobile-nav {
     -4px -4px 8px rgba(255,255,255,0.6);
 }
 
-.dark-mode .theme-toggle:hover {
-  box-shadow: 
-    3px 3px 6px rgba(0,0,0,0.5),
-    -3px -3px 6px rgba(255,255,255,0.05);
-}
-
 /* Pressed effect */
 .theme-toggle:active {
   box-shadow: inset 4px 4px 8px rgba(0,0,0,0.1),
               inset -4px -4px 8px rgba(255,255,255,0.6);
 }
 
-.dark-mode .theme-toggle:active {
-  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.5),
-              inset -3px -3px 6px rgba(255,255,255,0.05);
-}
-
-/* Icon inside */
+/* Image inside the toggle */
 .theme-toggle img {
   width: 50%;
   height: 50%;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative; /* ensures it layers above the ::before glow */
 }
 
+/* Slight scale on hover */
 .theme-toggle:hover img {
   transform: scale(1.1);
 }
 
+/* Dark mode filter */
 .dark-mode .theme-toggle img {
-  filter: brightness(0.9); 
+  filter: brightness(0.9);
 }
 
 

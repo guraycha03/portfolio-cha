@@ -1,0 +1,170 @@
+/* =========================================
+   VARIABLES / DESIGN TOKENS
+========================================= */
+
+/* =======================
+   Root Palette
+======================= */
+
+:root {
+  /* Base Colors */
+  --color-bg: #fffdf8;         
+  --color-text: #494848ff;      
+  --color-text-light: #666666;  
+
+  /* Brand / Accent */
+  --color-primary: #7ba0bd;      
+  --color-primary-light: #c2dbee; 
+  --color-secondary: #da8683;      
+  --button-bg: #96bcda;
+  --button-text: #ffffff;
+
+  /* Borders & Cards */
+  --border2: #8cabc4;
+  --color-border: #e0e0e0;
+  --color-card-bg: #ffffff;
+  --color-muted: #f5f5f5;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Typography */
+  --font-main: "Quicksand", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+}
+
+
+/* =========================================
+   DARK MODE STYLES
+========================================= */
+
+:root.dark-mode {
+  /* Base Colors */
+  --color-bg: #181a1b;        
+  --color-text: #e8e8e8; 
+  --color-text-dark: #494848ff      
+  --color-text-light: #aaaaaa; 
+
+  /* Brand / Accent */
+  --color-primary: #88b8d8;       
+  --color-primary-light: #3f596d; 
+  --color-secondary: #d58a87;    
+  --button-bg: #5c88a8;
+  --button-text: #ffffff;
+
+  /* Borders & Cards */
+  --border2: #4a5b66;
+  --color-border: #2a2a2a;
+  --color-card-bg: #222425;      
+  --color-muted: #2e2f31;        
+
+  /* Shadows */
+  --shadow-soft: 0 2px 6px rgba(0,0,0,0.4);
+  --shadow-medium: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* =========================================
+   DARK MODE STYLES
+========================================= */
+
+/* Body */
+.dark-mode body {
+  position: relative;       
+  color: var(--color-text);
+  background: none;         
+}
+
+/* Background image + overlay */
+.dark-mode body::before {
+  content: "";
+  position: fixed;           
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('assets/images/moon.jpg') center/cover no-repeat;
+  background-size: cover;
+  z-index: -1;                
+  pointer-events: none; 
+}
+
+/* Main Content Sections */
+.dark-mode main,
+.dark-mode section,
+.dark-mode .card {
+  background: transparent;    
+  color: var(--color-text);
+}
+
+/* Header */
+.dark-mode header {
+  background: linear-gradient(145deg, #2a2a2a, #252525);
+  color: var(--color-text);
+}
+
+/* Logo */
+.dark-mode .logo {
+  color: #f5f5f5;
+}
+
+/* Navigation Links */
+.dark-mode nav ul li a,
+.dark-mode .mobile-nav ul li a {
+  color: #f5f5f5;
+}
+
+.dark-mode nav ul li a:hover,
+.dark-mode .mobile-nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+/* Burger Menu */
+.dark-mode .burger span {
+  background: #f5f5f5;
+}
+
+/* Mobile Navigation */
+.dark-mode .mobile-nav {
+  background: var(--color-card-bg);
+  box-shadow: var(--shadow-medium);
+}
+
+.dark-mode .mobile-nav ul li a {
+  color: var(--color-text);
+  background: transparent;
+}
+
+.dark-mode .mobile-nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+.dark-mode .mobile-nav ul li a::after {
+  background: var(--color-primary);
+}
+
+/* Theme Toggle Button */
+.dark-mode .theme-toggle {
+  background: #8d9096; 
+  box-shadow: 
+    4px 4px 8px rgba(0,0,0,0.5),
+    -4px -4px 8px #ffffff0d;
+}
+
+
+
+/* =========================================
+   END OF DARK MODE STYLES
+========================================= */

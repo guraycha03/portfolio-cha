@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-/* Title above section */ 
+/* Title */
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-/* Image + Text layout */
+/* Layout */
 .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -73,7 +73,7 @@
   }
 }
 
-/* Education in About Me */
+/* Education */
 .about-text .education {
   margin-top: 2rem;
 }
@@ -101,8 +101,7 @@
   color: var(--color-text-light);
 }
 
-
-
+/* Certifications */
 .certifications {
   margin-top: 2rem;
 }
@@ -139,36 +138,32 @@
   border-radius: 8px;
 }
 
-/* Modal overlay */
-
+/* Modal */
 .cert-modal {
-  display: none;  /* hidden by default */
+  display: none;
   position: fixed;
   z-index: 2000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.64); /* dark overlay */
-  align-items: center;  /* only active when display:flex is added */
+  background-color: rgba(0, 0, 0, 0.64);
+  align-items: center;
   justify-content: center;
-  padding: 120px 20px;   /* push content lower to avoid header overlap */
+  padding: 120px 20px;
   box-sizing: border-box;
 }
 
-
-/* Modal content wrapper with background */
 .cert-modal-box {
-  background: var(--color-bg, #fffdf8); /* soft background */
+  background: var(--color-bg, #fffdf8);
   padding: 1rem;
   border-radius: 16px;
   max-width: 95%;
   max-height: 85vh;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
   animation: zoomIn 0.3s ease;
 }
 
-/* Certificate image inside the box */
 .cert-modal-content {
   display: block;
   max-width: 100%;
@@ -177,7 +172,6 @@
   margin: 0 auto;
 }
 
-/* Close button */
 .cert-close {
   position: absolute;
   top: 20px;
@@ -196,6 +190,6 @@
 
 /* Animation */
 @keyframes zoomIn {
-  from {transform: scale(0.8);}
-  to {transform: scale(1);}
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
 }

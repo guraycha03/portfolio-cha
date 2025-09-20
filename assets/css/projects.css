@@ -58,8 +58,8 @@
 
 .project-card img {
   width: 100%;
-  height: 220px;          /* ✅ fixed height */
-  object-fit: cover;      /* ✅ keeps image proportion */
+  height: 220px;         
+  object-fit: cover;     
   border-radius: 12px;
   margin-bottom: 1rem;
 }
@@ -71,7 +71,7 @@
   cursor: pointer;
   font-weight: 700;
   transition: all 0.3s ease;
-  width: 180px; /* ✅ fixed width */
+  width: 180px;
   padding: 12px 20px;
   border-radius: 100px;
   background: var(--color-primary);
@@ -162,7 +162,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 1600px;
-  grid-template-columns: 1fr; /* default small screen */
+  grid-template-columns: 1fr;
 }
 
 /* ==========================
@@ -196,7 +196,7 @@
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5; /* ensures button stays above iframe */
+  z-index: 5; 
 }
 
 /* Fallback for iframe */

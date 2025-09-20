@@ -205,25 +205,27 @@ document.querySelectorAll(".iframe-wrapper").forEach((wrapper) => {
   });
 });
 
-
-
-
+/* ======================================================
+   CERTIFICATE MODAL (Open, Close, Outside Click)
+====================================================== */
 const modal = document.getElementById("certModal");
-  const modalImg = document.getElementById("certModalImg");
-  const closeBtn = document.querySelector(".cert-close");
+const modalImg = document.getElementById("certModalImg");
+const closeBtn = document.querySelector(".cert-close");
 
-  // Open modal when certificate clicked
-  document.querySelectorAll(".cert-thumb").forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.dataset.src;
-    });
+// Open modal when a certificate thumbnail is clicked
+document.querySelectorAll(".cert-thumb").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalImg.src = img.dataset.src;
   });
+});
 
-  // Close modal
-  closeBtn.onclick = () => modal.style.display = "none";
+// Close modal on close button
+closeBtn.onclick = () => modal.style.display = "none";
 
-  // Close on outside click
-  modal.onclick = (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  };
+// Close modal when clicking outside modal box
+modal.onclick = (e) => {
+  if (e.target === modal) modal.style.display = "none";
+};
+
+

@@ -165,5 +165,16 @@ function spawnFloatingFlower(x, y) {
 
 
 
+document.querySelectorAll('.view-live-btn').forEach((btn, i) => {
+  const urls = [
+    'https://mochi-lake.vercel.app/',
+    'https://mochi-lake.vercel.app/',
+    'https://mochi-mood.vercel.app/'
+  ];
+  
+  btn.addEventListener('click', () => {
+    window.open(urls[i], '_blank');
+  });
+});
 
 

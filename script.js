@@ -167,7 +167,7 @@ function spawnFloatingFlower(x, y) {
 
 document.querySelectorAll('.view-live-btn').forEach((btn, i) => {
   const urls = [
-    'https://mochi-lake.vercel.app/',
+    'https://cute-doll.vercel.app/'
     'https://mochi-lake.vercel.app/',
     'https://mochi-mood.vercel.app/'
   ];
@@ -183,5 +183,15 @@ wrappers.forEach(wrapper => {
   const iframe = wrapper.querySelector('iframe');
   iframe.addEventListener('error', () => {
     wrapper.querySelector('.iframe-fallback').style.display = 'block';
+  });
+});
+
+
+document.querySelectorAll(".iframe-wrapper").forEach(wrapper => {
+  const iframe = wrapper.querySelector("iframe");
+  const fallback = wrapper.querySelector(".iframe-fallback");
+
+  iframe.addEventListener("load", () => {
+    fallback.style.display = "none"; // hide gif when iframe finishes loading
   });
 });

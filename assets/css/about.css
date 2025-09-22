@@ -41,6 +41,7 @@
 .about-image img {
   width: 100%;
   border-radius: 12px;
+  background: #f7f0e8ff;
   box-shadow: var(--shadow-soft);
   object-fit: cover;
   display: block;

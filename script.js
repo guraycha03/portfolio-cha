@@ -180,7 +180,7 @@ function spawnFloatingFlower(x, y) {
 const funProjectUrls = [
   "https://cute-doll.vercel.app/",
   "https://mochi-lake.vercel.app/",
-  "https://mochi-mood.vercel.app/",
+  "https://cute-phone.vercel.app/",
 ];
 
 document.querySelectorAll("#fun-projects .view-live-btn").forEach((btn, i) => {

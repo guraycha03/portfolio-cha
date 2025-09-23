@@ -99,7 +99,7 @@
 .about-text .education .school {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 /* Certifications */
@@ -193,4 +193,66 @@
 @keyframes zoomIn {
   from { transform: scale(0.8); }
   to { transform: scale(1); }
+}
+
+
+/* Resume Section */
+.resume-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.resume-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.resume-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+/* Resume Viewer */
+.resume-viewer {
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  box-shadow: var(--shadow-soft);
+  border-radius: 12px;
+  background: var(--color-bg);
+  padding: 1rem;
+}
+
+.resume-viewer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Button */
+.btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-viewer {
+    padding: 0.5rem;
+  }
 }

@@ -443,8 +443,8 @@ section {
   font-size: 1.27rem;
   margin-bottom: var(--space-lg);
   line-height: 1.6;
-  color: var(--color-text-light);
-  font-weight: 600;
+
+  font-weight: 500;
 }
 
 /* ======================================================

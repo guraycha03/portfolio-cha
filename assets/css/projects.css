@@ -1,12 +1,3 @@
-/* ==========================
-   VARIABLES (if needed)
-========================== */
-:root {
-  --color-bg: #fffdf8;
-  --color-text: #333;
-  --color-primary: #7ba0bd;
-  --color-primary-light: #c2dbee;
-}
 
 /* ==========================
    PROJECTS SECTION
@@ -40,8 +31,7 @@
    MAIN PROJECT CARDS
 ========================== */
 .project-card {
-  /* background: #fff; */
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -221,7 +211,7 @@
 }
 
 .iframe-fallback img {
-  width: 120px; /* smaller GIF */
+  width: 120px; 
   height: auto;
   margin-bottom: 0.8rem;
 }
@@ -332,7 +322,7 @@
   }
 }
 
-/* Medium screens: 2 per row */
+/* Medium screens */
 @media (min-width: 768px) {
   .projects-grid,
   .fun-projects .projects-grid {
@@ -340,7 +330,7 @@
   }
 }
 
-/* Wide screens: 3 per row */
+/* Wide screens */
 @media (min-width: 1200px) {
   .projects-grid,
   .fun-projects .projects-grid {

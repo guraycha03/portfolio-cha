@@ -1005,14 +1005,12 @@ section {
   transform: translateX(4px);
 }
 
-/* Social link icons */
 .footer-social a img {
   width: 20px;          
   height: 20px;
   object-fit: contain;
   display: inline-block;
 }
-
 
 /* Footer bottom */
 .footer-bottom {

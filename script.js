@@ -103,7 +103,7 @@ themeToggle.addEventListener("click", () => {
     themeIcon.src = "assets/icons/sun.svg";
     localStorage.setItem("theme", "dark");
   } else {
-    themeIcon.src = "assets/icons/moon.svg";
+    themeIcon.src = "assets/icons/moon.png";
     localStorage.setItem("theme", "light");
   }
 });

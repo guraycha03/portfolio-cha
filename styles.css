@@ -11,6 +11,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Dark mode */
+html.dark-mode body {
+  background: transparent;   
+  background-image: none;    
+  color: var(--color-text);
+  position: relative;
+  z-index: 0;
+}
+
+html.dark-mode body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("assets/images/dark-mode.jpg") center/cover no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Light mode */
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
@@ -18,8 +39,15 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: background 0.3s, color 0.3s;
-  -ms-overflow-style: none; 
-  overflow-y: scroll;         
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+
+  /* Light background pattern */
+  background-image: url("assets/images/animated-shapes.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 body::-webkit-scrollbar {
@@ -53,52 +81,38 @@ body, header, nav, .mobile-nav {
 /* =========================
    THEME TOGGLE BUTTON
 ========================= */
-/* =========================
-   THEME TOGGLE BUTTON - Uiverse Style
-========================= */
 .theme-toggle {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+
+  border: none;
   border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  background: #e0e0e0;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 
-    6px 6px 12px rgba(0, 0, 0, 0.1),
-    -6px -6px 12px rgba(255, 255, 255, 0.7);
+    6px 6px 12px rgba(0, 0, 0, 0.15), 
+    -6px -6px 12px rgba(255, 255, 255, 0.25); 
+
+  transition: all 0.3s ease;
 }
 
-/* Glow effect behind toggle */
-.theme-toggle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
-  margin-left: -24px;
-  margin-top: -24px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.2;
-}
-
-/* Hover effect */
 .theme-toggle:hover {
   box-shadow: 
-    4px 4px 8px rgba(0,0,0,0.08),
-    -4px -4px 8px rgba(255,255,255,0.6);
+    2px 2px 6px rgba(0, 0, 0, 0.2),
+    -2px -2px 6px rgba(255, 255, 255, 0.3);
 }
 
-/* Pressed effect */
 .theme-toggle:active {
-  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.1),
-              inset -4px -4px 8px rgba(255,255,255,0.6);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+              inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
+
 
 /* Image inside the toggle */
 .theme-toggle img {
@@ -114,28 +128,54 @@ body, header, nav, .mobile-nav {
   transform: scale(1.1);
 }
 
-/* Dark mode filter */
-.dark-mode .theme-toggle img {
-  filter: brightness(0.9);
-}
-
 
 /* =========================
    HEADER
 ========================= */
-header {
+
+.header-wrapper {
   position: sticky;
   top: 0;
-  width: 100%;
-  background: var(--color-card-bg);
+  z-index: 3000;
+  background: var(--color-bg); /* same background as page */
+  padding-top: 20px; /* this creates the floating space */
+}
+
+header {
+  position: sticky;
+  top: 20px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  
+  /* Glassmorphism background */
+  background: rgba(255, 255, 255, 0.6); /* more solid to hide content */
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+  
+  /* Add inner "solid" mask so content doesn’t bleed through */
+  overflow: hidden; /* keeps pseudo-element inside */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--space-md) var(--space-lg);
   height: 70px;
-  box-shadow: var(--shadow-soft);
   z-index: 3000;
+  transition: all 0.3s ease;
 }
+
+/* Add an invisible solid layer */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit; /* uses the same semi-transparent color */
+  z-index: -1; /* stays behind header content */
+}
+
+
 
 .logo {
   font-size: var(--font-size-xl);
@@ -230,7 +270,7 @@ nav ul li a:hover {
 ========================= */
 .mobile-nav {
   position: fixed;
-  top: 5px;
+  top: 30px;
   right: 0;
   height: 100vh;
   width: 260px;
@@ -388,7 +428,7 @@ nav ul li a:hover::after,
 }
 
 section {
-  padding: 80px 20px; /* same top and bottom for all sections */
+  padding: 70px 20px; /* same top and bottom for all sections */
 }
 
 
@@ -494,6 +534,44 @@ section {
 .btn.secondary:hover {
   background: var(--color-primary-light);
   color: var(--color-text);
+}
+
+/* Hero Social Icons */
+.hero-socials {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-card-bg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-4px);
+}
+
+.hero-socials img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Center them on mobile */
+@media (max-width: 767px) {
+  .hero-socials {
+    justify-content: center;
+  }
 }
 
 /* ======================================================
@@ -821,50 +899,104 @@ section {
 }
 
 
+/* ========== FOOTER ========== */
 .site-footer {
-  background-color: #fefdf9;
-  padding: 60px 20px 20px;
+  background: linear-gradient(145deg, #fffdfa, #f9f9f9);
+  padding: 70px 25px 25px;
   color: var(--color-text-light);
   font-size: 0.95rem;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.05);
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
 }
+
+
 
 .footer-brand {
-  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;   /* GIF above logo */
+  align-items: center;      /* center horizontally */
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
 }
 
-.footer-brand .logo {
-  font-size: 1.5rem;
+.footer-brand .brand-media img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-brand .brand-text .logo {
+  font-size: 2rem;          /* bigger logo text */
   font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
 }
 
-.footer-links,
-.footer-social {
-  flex: 1 1 180px;
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Keep gif+logo centered */
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Left-align links & socials */
+  .footer-links,
+  .footer-social {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+
+
+  .footer-links a,
+  .footer-social a {
+    justify-content: flex-start;
+  }
+
+
+  .footer-bottom {
+    text-align: left;
+  }
 }
 
+
+
+
+
+
+
+
+/* Links & Social */
 .footer-links h4,
 .footer-social h4 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin-bottom: 1rem;
   color: var(--color-primary);
+  font-weight: 600;
 }
 
 .footer-links ul,
 .footer-social ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-links li,
@@ -876,36 +1008,44 @@ section {
 .footer-social a {
   color: var(--color-text-light);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .footer-links a:hover,
 .footer-social a:hover {
   color: var(--color-primary);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
+/* Social link icons */
+.footer-social a img {
+  width: 20px;          /* consistent icon size */
+  height: 20px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+
+/* Footer bottom */
 .footer-bottom {
-  text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 0.85rem;
   color: var(--color-text-light);
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
 }
 
-/* Responsive */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .footer-links,
-  .footer-social {
-    flex: 1 1 100%;
+    grid-template-columns: 1fr 1fr;
   }
 }
+
 
 
 /* ☁️🌱 CHA 🌱☁️ */

@@ -14,37 +14,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <div class="header-wrapper">
+    <header>
+      <!-- Left group for mobile: logo only -->
+      <div class="left-group">
+        <div class="logo">Cha</div>
+      </div>
+
+      <!-- Navigation (desktop only) -->
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme toggle -->
+      <div class="theme-toggle" id="themeToggle">
+        <img src="assets/icons/moon.png" alt="Toggle Theme" id="themeIcon">
+      </div>
+
+      <!-- Burger menu (mobile only) -->
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+
+  </div>
   
-  <header>
-    <!-- Left group for mobile: logo only -->
-    <div class="left-group">
-      <div class="logo">Cha</div>
-    </div>
-
-    <!-- Navigation (desktop only) -->
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Theme toggle -->
-    <div class="theme-toggle" id="themeToggle">
-      <img src="assets/icons/moon.svg" alt="Toggle Theme" id="themeIcon">
-    </div>
-
-    <!-- Burger menu (mobile only) -->
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-
+  
     <!-- Mobile Menu (moved OUTSIDE header) -->
     <div class="mobile-nav" id="mobile-nav">
       <ul>
@@ -68,10 +73,26 @@
         Feel free to explore my projects and see what I’ve been working on.
       </p>
       
-        <div class="hero-buttons">
+      <div class="hero-buttons">
         <a href="#projects" class="btn primary">Learn More</a>
         <a href="#contact" class="btn secondary">Contact Me</a>
       </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+          <img src="assets/icons/hero-github.png" alt="GitHub">
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="assets/icons/hero-linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="mailto:youremail@example.com" target="_blank" rel="noopener" aria-label="Email">
+          <img src="assets/icons/hero-email.png" alt="Email">
+        </a>
+        <a href="https://dribbble.com/guray_cha" target="_blank" rel="noopener" aria-label="Dribbble">
+          <img src="assets/icons/hero-dribbble.png" alt="Dribbble">
+        </a>
+      </div>
+
     </div>
     
     <div class="hero-image">
@@ -340,25 +361,20 @@
           <button type="submit" class="btn primary">Send Message</button>
         </form>
 
-        <!-- Fun Contact Options -->
-        <div class="contact-info">
-          <h3>Other Ways to Connect</h3>
-          <ul>
-            <li><a href="mailto:cha@example.com" class="contact-link">📧 Email Me</a></li>
-            <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-link">🐱 GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener noreferrer" class="contact-link">💼 LinkedIn</a></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <!-- Logo / Branding -->
       <div class="footer-brand">
-        <div class="logo">Cha</div>
-        <p>Crafting engaging web experiences, one project at a time.</p>
+        <div class="brand-media">
+          <img src="assets/images/cute-shark.gif" alt="Cha GIF">
+        </div>
+        <div class="brand-text">
+          <div class="logo">Cha</div>
+        </div>
       </div>
 
       <!-- Quick Links -->
@@ -374,14 +390,33 @@
       </div>
 
       <!-- Social Media -->
+      <!-- Social Media -->
       <div class="footer-social">
         <h4>Connect With Me</h4>
         <ul>
-          <li><a href="mailto:guraycha@example.com" target="_blank" rel="noopener noreferrer">📧 Email</a></li>
-          <li><a href="https://github.com/guraycha03" target="_blank" rel="noopener noreferrer">🐱 GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/charisse-guray/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a></li>
+          <li>
+            <a href="mailto:guraycha@example.com" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/gmail.png" alt="Email"> Email
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/guraycha03" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/github.svg" alt="GitHub"> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/charisse-guray/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/linkedin.png" alt="LinkedIn"> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://dribbble.com/guray_cha" target="_blank" rel="noopener" aria-label="Dribbble">
+              <img src="assets/icons/dribbble.png" alt="Dribbble">
+            </a>
+          </li>
         </ul>
       </div>
+
     </div>
 
     <!-- Footer Bottom -->

@@ -145,6 +145,15 @@ html.dark-mode .header-wrapper {
   background: var(--color-primary);
 }
 
+
+.dark-mode .about-section {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.dark-mode .cert-item {
+  background: #181a1b9d;
+}
 /* =========================================
    END OF DARK MODE STYLES
 ========================================= */

@@ -1,7 +1,9 @@
 /* About Section */
 .about-section {
   padding: 80px 20px 60px;
-  background-color: var(--color-bg);
+  background-color: #fffdf86c;
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
   color: var(--color-text);
   position: relative;
   z-index: 2;
@@ -32,20 +34,71 @@
   justify-content: center;
 }
 
-.about-image {
-  flex: 1 1 300px;
-  max-width: 350px;
-  text-align: center;
+.about-image img {
+  margin: 0;
+  padding: 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.about-image img {
+.about-image {
+  flex: 1 1 350px; 
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card {
   width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1; 
+  perspective: 1000px;
+  position: relative;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
   border-radius: 12px;
-  background: #f7f0e8ff;
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+
 
 .about-text {
   flex: 2 1 400px;
@@ -63,10 +116,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-
-  .about-image {
-    max-width: 250px;
   }
 
   .about-text {
@@ -121,6 +170,8 @@
 
 .cert-item {
   background: var(--color-bg);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
   border: 2px solid #e0e0e0ff;
   padding: 1rem;
   border-radius: 12px;

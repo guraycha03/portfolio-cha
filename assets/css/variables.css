@@ -145,21 +145,16 @@ html.dark-mode .header-wrapper {
   background: var(--color-primary);
 }
 
-
-
-
-
-
 /* =========================================
    END OF DARK MODE STYLES
 ========================================= */
 
 /* Remove blue highlight / text selection / focus outline */
 * {
-  -webkit-tap-highlight-color: transparent; /* Safari & Chrome */
-  -webkit-user-select: none;                /* Prevent text selection on double tap */
-  -moz-user-select: none;                   /* Firefox */
-  -ms-user-select: none;                    /* IE/Edge */
-  user-select: none;                        /* Standard */
-  outline: none;                            /* Remove focus outline */
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-user-select: none;               
+  -moz-user-select: none;                  
+  -ms-user-select: none;                   
+  user-select: none;                       
+  outline: none;                          
 }

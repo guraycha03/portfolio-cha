@@ -134,8 +134,8 @@ body, header, nav, .mobile-nav {
   position: sticky;
   top: 0;
   z-index: 3000;
-  background: var(--color-bg); /* same background as page */
-  padding-top: 20px; /* this creates the floating space */
+  background: var(--color-bg); 
+  padding-top: 20px; 
 }
 
 header {
@@ -143,17 +143,12 @@ header {
   top: 20px;
   width: calc(100% - 40px);
   margin: 0 auto;
-  
-  /* Glassmorphism background */
-  background: rgba(255, 255, 255, 0.6); /* more solid to hide content */
+  background: rgba(255, 255, 255, 0.6); 
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   backdrop-filter: blur(12px) saturate(150%);
-  
-  /* Add inner "solid" mask so content doesn’t bleed through */
-  overflow: hidden; /* keeps pseudo-element inside */
+  overflow: hidden; 
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -163,16 +158,13 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Add an invisible solid layer */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: inherit; /* uses the same semi-transparent color */
-  z-index: -1; /* stays behind header content */
+  background: inherit; 
+  z-index: -1; 
 }
-
-
 
 .logo {
   font-size: var(--font-size-xl);
@@ -197,7 +189,6 @@ header::before {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 
 nav {
   display: none;
@@ -416,7 +407,7 @@ nav ul li a:hover::after,
   border-radius: 3px;
   margin: 3rem 0;
   transition: all 0.3s ease;
-  box-shadow: none; /* reset for light mode */
+  box-shadow: none; 
 }
 
 .dark-mode .glow-hr {
@@ -425,7 +416,7 @@ nav ul li a:hover::after,
 }
 
 section {
-  padding: 70px 20px; /* same top and bottom for all sections */
+  padding: 70px 20px; 
 }
 
 
@@ -444,8 +435,8 @@ section {
   padding: 60px 40px;
   /* background-color: var(--color-bg); */
   color: var(--color-text);
-  position: relative; /* needed for floating flowers */
-  z-index: 1;         /* make sure it's behind future sections */
+  position: relative; 
+  z-index: 1;         
 }
 
 
@@ -919,8 +910,8 @@ section {
 
 .footer-brand {
   display: flex;
-  flex-direction: column;   /* GIF above logo */
-  align-items: center;      /* center horizontally */
+  flex-direction: column;  
+  align-items: center;     
   justify-content: center;
   gap: 0.6rem;
   text-align: center;
@@ -935,19 +926,18 @@ section {
 }
 
 .footer-brand .brand-text .logo {
-  font-size: 2rem;          /* bigger logo text */
+  font-size: 2rem;          
   font-weight: 700;
   color: var(--color-text-light);
 }
 
-/* Small screen adjustments */
+/* Small screen */
 @media (max-width: 600px) {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  /* Keep gif+logo centered */
   .footer-brand {
     align-items: center;
     text-align: center;
@@ -960,13 +950,10 @@ section {
     align-items: flex-start;
   }
 
-
-
   .footer-links a,
   .footer-social a {
     justify-content: flex-start;
   }
-
 
   .footer-bottom {
     text-align: left;
@@ -1020,7 +1007,7 @@ section {
 
 /* Social link icons */
 .footer-social a img {
-  width: 20px;          /* consistent icon size */
+  width: 20px;          
   height: 20px;
   object-fit: contain;
   display: inline-block;

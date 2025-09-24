@@ -84,8 +84,8 @@ body, header, nav, .mobile-nav {
 .theme-toggle {
   position: relative;
   background: rgba(255, 255, 255, 0.15); 
-  backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
 
   border: none;
   border-radius: 50%;
@@ -113,17 +113,14 @@ body, header, nav, .mobile-nav {
               inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
-
-/* Image inside the toggle */
 .theme-toggle img {
   width: 50%;
   height: 50%;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
-  position: relative; /* ensures it layers above the ::before glow */
+  position: relative; 
 }
 
-/* Slight scale on hover */
 .theme-toggle:hover img {
   transform: scale(1.1);
 }

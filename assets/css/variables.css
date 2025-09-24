@@ -82,7 +82,7 @@
 ========================================= */
 
 html.dark-mode .header-wrapper {
-  background: var(--color-bg);
+  background: #000000;
 }
 
 .dark-mode .theme-toggle {
@@ -154,6 +154,39 @@ html.dark-mode .header-wrapper {
 .dark-mode .cert-item {
   background: #181a1b9d;
 }
+
+.dark-mode .about-image img {
+  background: #181a1ba2;
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%)
+}
+
+html.dark-mode .site-footer {
+  background: linear-gradient(145deg, #1f2021, #181a1b);
+  color: var(--color-text-light);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.6);
+}
+
+html.dark-mode .footer-brand .brand-text .logo {
+  color: var(--color-text);
+}
+
+html.dark-mode .footer-links h4,
+html.dark-mode .footer-social h4 {
+  color: var(--color-primary);
+}
+
+html.dark-mode .footer-links a,
+html.dark-mode .footer-social a {
+  color: var(--color-text-light);
+}
+
+html.dark-mode .footer-bottom {
+  color: var(--color-text-light);
+  border-top: 1px solid var(--color-border);
+}
+
 /* =========================================
    END OF DARK MODE STYLES
 ========================================= */
